@@ -4,20 +4,32 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  background-color: #d9dad2; /* Change this color */
+  overflow-x: hidden;
+  background-color: #d9dad2;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top */
+  padding-top: 150px; /* Adjust as needed */
 }
 
 .background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: 800px;
   z-index: -1;
-  background-image: url("your-background-image.jpg");
+  background-image: url("images/background market trend .jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center 20%;
+  border-radius: 30px;
 }
 
 nav {
@@ -26,11 +38,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 1;
-  width: 100%; /* Ensure nav takes full width */
-  
-  
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }
 
 nav ul {
@@ -38,23 +49,22 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  transform: translateX(10%); /* Adjust 20% to your desired shift */
+  transform: translateX(10%);
 }
 
 nav li {
   margin-right: 20px;
   position: relative;
-  white-space: nowrap; /* Prevent wrapping in nav items */
+  white-space: nowrap;
+  
 }
 
 nav a {
   text-decoration: none;
   color: #333;
   padding: 5px 10px;
-  display: block; /* Make <a> fill the <li> */
+  display: block;
 }
-
-/* ... Arrow up and down change based on hover ... */
 
 nav ul li.dropdown > a {
   position: relative;
@@ -63,29 +73,24 @@ nav ul li.dropdown > a {
 }
 
 nav ul li.dropdown > a::after {
-  content: "\01F853 "; /* Down arrow */
+  content: "\01F853";
   position: absolute;
   top: 50%;
   right: 5px;
   transform: translateY(-50%);
   transition: transform 0.3s ease;
-  font-size: 20px;
+  font-size: 25px;
   color: #333;
 }
 
-/* More Specific Selectors (Important!) */
-nav > ul > li.dropdown:not(:hover) > a::after {  /* More Specific */
+nav > ul > li.dropdown:not(:hover) > a::after {
   transform: translateY(-50%) rotate(180deg);
+  
 }
 
-nav > ul > li.dropdown:hover > a::after { /* More Specific */
+nav > ul > li.dropdown:hover > a::after {
   transform: translateY(-50%);
 }
-
-
-/* ... Arrow up and down change based on hover ... */
-
-
 
 .dropdown-content {
   display: none;
@@ -95,7 +100,7 @@ nav > ul > li.dropdown:hover > a::after { /* More Specific */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   top: 100%;
-  left: 0; /* Align to left edge of parent */
+  left: 0;
 }
 
 .dropdown-content a {
@@ -103,7 +108,7 @@ nav > ul > li.dropdown:hover > a::after { /* More Specific */
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  white-space: nowrap; /* Prevent wrapping in dropdown */
+  white-space: nowrap;
 }
 
 .dropdown:hover .dropdown-content {
@@ -114,18 +119,111 @@ nav a:hover {
   background-color: #ddd;
 }
 
-nav ul li.dropdown { /* Target only dropdown list items */
-  margin-right: 150px; /* Increase margin as needed */
-  
+nav ul li.dropdown {
+  margin-right: 150px;
 }
 
-main {
-  flex: 1;
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .content {
-  padding: 20px;
+  padding: 30px 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: fit-content;
+  max-width: 100%;
 }
+
+.content p{
+  margin-top: -120px; /* Adjust this value to move the paragraph up */
+
+}
+
+.content h2 {
+  margin-right: 20px; /* Space between heading and paragraph/button */
+  flex: 1 1 auto; /* Allow text to grow and shrink */
+  font-size: 4em; /* Example font size, adjust as needed */
+  color: black; /* Example color, adjust as needed */
+}
+
+#fundamentals {
+  padding: 40px; /* Adjust padding around the content */
+  background-color: #f8f8f8; /* Example background color */
+  border-radius: 10px; /* Add rounded corners */
+  margin-top: 50px; /* Add top margin for spacing */
+  margin-bottom: 50px; /* Add bottom margin for spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  max-width: 900px; /* Set a maximum width for the section */
+  margin-left: auto; /* Center the section horizontally */
+  margin-right: auto; /* Center the section horizontally */
+}
+
+#fundamentals h2 {
+  color: #333; /* Darker heading color */
+  margin-bottom: 20px; /* Space below heading */
+  font-size: 2em; /* Adjust heading size */
+}
+
+#fundamentals p {
+  line-height: 1.6; /* Improve readability */
+  color: #555; /* Adjust paragraph color */
+  font-size: 16px; /* Adjust paragraph size */
+}
+
+/* Add any additional styles for other elements within #fundamentals */
+#fundamentals ul { /* Example: style for lists */
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.content h1,
+.content p {
+  margin-right: 20px;
+  margin-bottom: 100px;
+  flex: 1 1 auto;
+}
+
+#myButton {
+  background-color: black;
+  color: #87a474;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  align-self: center; /* Vertically center the button */
+  margin-bottom: 150px;
+  
+}
+
+#myButton:hover {
+  background-color: #0056b3;
+}
+
+/* Fundamentals Section Styles */
+#fundamentals {
+  padding: 40px; /* Add some padding around the content */
+  background-color: #f8f8f8; /* Example background color */
+  border-radius: 10px; /* Add rounded corners */
+  margin-top: 50px; /* Add top margin for spacing */
+  margin-bottom: 50px; /* Add bottom margin for spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+#fundamentals h2 {
+  color: #333; /* Darker heading color */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+#fundamentals p {
+  line-height: 1.6; /* Improve readability */
+}
+
 
 .logo {
   display: flex;
@@ -161,38 +259,36 @@ main {
   margin-right: 30px;
 }
 
-
 #scrollToTopBtn {
   display: none;
   position: fixed;
-  bottom: 30px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
-  z-index: 100; /* Ensure it's on top */
+  bottom: 30px;
+  right: 20px;
+  z-index: 100;
   border: none;
   outline: none;
   background-color: black;
   color: white;
   cursor: pointer;
-  width: 50px; /* Set a fixed width and height */
+  width: 50px;
   height: 50px;
-  border-radius: 50%; /* Make it a circle */
+  border-radius: 50%;
   font-size: 16px;
   opacity: 1;
-  transition: all 0.3s ease; /* Smooth transition for all properties */
-  transition: transform 0.2s ease, opacity 0.3s ease, background-color 0.3s ease; /* Add transform to transition */
-  display: flex; /* Use flexbox for centering */
+  transition: all 0.3s ease;
+  display: flex;
   align-items: center;
-  justify-content: center; /* Center the arrow horizontally and vertically */
+  justify-content: center;
 }
 
 #scrollToTopBtn:hover {
-  transform: scale(1.1); /* Scale up by 10% on hover */
+  transform: scale(1.1);
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.9); /* Slightly less transparent on hover */
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 #scrollToTopBtn::after {
-  content: "\01F851 "; /* Up arrow Unicode */
+  content: "\01F851";
   font-size: 20px;
   color: white;
 }
@@ -212,8 +308,8 @@ footer {
   font-size: 14px;
 }
 
-@media (max-width: 768px) { /* Example breakpoint */
+@media (max-width: 768px) {
   nav ul li.dropdown > a::after {
-      font-size: 14px; /* Smaller arrow on smaller screens */
+      font-size: 14px;
   }
 }
