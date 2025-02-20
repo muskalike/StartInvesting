@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plain Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-image"></div>
+    <nav>
+        <div class="logo">
+            <a href="/" class="index.html">
+                <img src="images/anduril logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                <span class="logo-placeholder" style="display:none;">Logo</span>
+            </a>
+        </div>
+        <ul>
+            <li class="dropdown">
+                <a href="#">Terms</a>
+                <div class="dropdown-content">
+                    <a href="#">Simple Terms</a>
+                    <a href="#">Complex Terms</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Sectors</a>
+                <div class="dropdown-content">
+                    <a href="#">Industrials</a>
+                    <a href="#">Technology</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <div class="dropdown-content">
+                    <a href="#">Service 1</a>
+                    <a href="#">Service 2</a>
+                    <a href="#">Service 3</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Contact</a>
+                <div class="dropdown-content">
+                    <a href="#">Contact Item 1</a>
+                    <a href="#">Contact Item 2</a>
+                </div>
+            </li>
+        </ul>
+        <div class="login">
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Start Investing Now</h1>
+        <p>We will run you through the basic to get you started on a strong foot.</p>
+    </div>
+
+    <footer>
+        <div class="copyright-strip"></div>
+        <div class="copyright">
+            &copy; 2025 COMPOUND All rights reserved.
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Go to top"></button>  <script>
+        // JavaScript to handle scroll and button visibility
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("scrollToTopBtn").style.display = "block";
+            } else {
+                document.getElementById("scrollToTopBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top
+        document.getElementById("scrollToTopBtn").addEventListener("click", function() {
+            // For modern browsers
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0; // For Safari
+        });
+    </script>
+
+<img src="images/forest background.jpg">
+
+
+</body>
+</html>
