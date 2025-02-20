@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plain Website</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function scrollToFundamentals() {
+            document.getElementById('fundamentals').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </head>
 <body>
 
-    <div class="background-image"></div>
     <nav>
         <div class="logo">
             <a href="/" class="index.html">
@@ -52,19 +58,33 @@
         </div>
     </nav>
 
-    <div class="content">
-        <h1>Start Investing Now</h1>
-        <p>We will run you through the basic to get you started on a strong foot.</p>
+    <div class="wrapper">
+        <main>
+            <div class="content-wrapper">
+                <div class="content">
+                    <h1>Start Investing Now</h1>
+                    <p>We will run you through the basics to get you started on a strong foot.</p>
+                    <button id="myButton" onclick="scrollToFundamentals()">Click Me</button>
+                </div>
+            </div>
+        </main>
+
+        <div class="background-image"></div>
+
+        <section id="fundamentals">
+            <h2>Fundamentals of Investing</h2>
+            <p>...</p>
+        </section>
+
+        <footer>
+            <div class="copyright-strip"></div>
+            <div class="copyright">
+                &copy; 2025 COMPOUND All rights reserved.
+            </div>
+        </footer>
     </div>
-
-    <footer>
-        <div class="copyright-strip"></div>
-        <div class="copyright">
-            &copy; 2025 COMPOUND All rights reserved.
-        </div>
-    </footer>
-
-    <button id="scrollToTopBtn" title="Go to top"></button>  <script>
+    <button id="scrollToTopBtn" title="Go to top"></button>
+    <script>
         // JavaScript to handle scroll and button visibility
         window.onscroll = function() {scrollFunction()};
 
@@ -83,9 +103,6 @@
             document.documentElement.scrollTop = 0; // For Safari
         });
     </script>
-
-<img src="images/forest background.jpg">
-
 
 </body>
 </html>
